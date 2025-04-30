@@ -18,3 +18,7 @@ $RECYCLE.BIN/
 Thumbs.db
 Desktop.ini
 .sync/
+
+.idea/
+__pycache__/
+*.pyc
