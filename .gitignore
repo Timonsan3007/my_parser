@@ -1,33 +1,20 @@
-# Исключаем системные файлы Windows
-AppData/
-Contacts/
-Desktop/
-Documents/
-Downloads/
-Favorites/
-Links/
-Music/
-Pictures/
-Saved Games/
-Searches/
-Videos/
-NTUSER.*
-ntuser.*
 
-# Исключаем временные файлы и конфигурации
-.bash_history
-.cache/
-.gitconfig
-.idlerc/
-.ipython/
-.lesshst
-.ssh/
+.venv/
+venv/
+__pycache__/
+
+
+.idea/
 .vscode/
 
-# Исключаем логи и другие ненужные файлы
-bot.log
-*.log
-*.tmp
 
-# Исключаем конфигурационные файлы IDE
-.idea/
+.env
+*.env
+
+*.log
+*.sqlite3
+
+$RECYCLE.BIN/
+Thumbs.db
+Desktop.ini
+.sync/

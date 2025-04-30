@@ -2,31 +2,27 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-# Абсолютный путь к .env
+# Загрузка переменных из .env
 dotenv_path = Path(__file__).parent / '.env'
 load_dotenv(dotenv_path)
 
-TELEGRAM_BOT_TOKEN = "7547982532:AAFInrxpssTY-HxFTkxSRt9xlG2oC1qjEIA"
-CHAT_ID = "172648106"
-VK_SERVICE_KEY = "e0f13480e0f13480e0f134807be3d8b187ee0f1e0f13480875ad428b4c8cab84fce4036"
-VK_ACCESS_TOKEN = "e0f13480e0f13480e0f134807be3d8b187ee0f1e0f13480875ad428b4c8cab84fce4036"
+# Telegram Bot
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
-# # Загружаем переменные
-# TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-# CHAT_ID = os.getenv("CHAT_ID")
+if not TELEGRAM_BOT_TOKEN:
+    raise ValueError("TELEGRAM_BOT_TOKEN")
+if not CHAT_ID:
+    raise ValueError("CHAT_ID")
 
-if TELEGRAM_BOT_TOKEN is None:
-    raise ValueError("TELEGRAM_BOT_TOKEN не найден в переменных окружения!")
-if CHAT_ID is None:
-    raise ValueError("CHAT_ID не найден в переменных окружения!")
-
-# Данные для Telegram Client
+# Telegram Client
 API_ID = os.getenv("TELEGRAM_API_ID")
 API_HASH = os.getenv("TELEGRAM_API_HASH")
 PHONE = os.getenv("PHONE")
 
-# VK токен
+# VK API
 VK_SERVICE_KEY = os.getenv("VK_SERVICE_KEY")
+VK_ACCESS_TOKEN = os.getenv("VK_ACCESS_TOKEN")
 
 NEWS_SITES = [
     "https://www.volgograd.kp.ru/online/",
